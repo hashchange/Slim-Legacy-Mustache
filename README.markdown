@@ -20,6 +20,20 @@ Implementation details:
 
 Otherwise, it is used in the exact same way as the class provided with [Slim-Extras](http://github.com/codeguy/Slim-Extras). See there for usage notes.
 
+## Installation
+
+Slim-Legacy-Mustache is best installed with Composer and is available from Packagist as "hashchange/slim-legacy-mustache". 
+
+The following setup in `composer.json` will install Slim and Mustache for PHP 5.2 in one go:
+
+	{
+	    "require": {
+	        "slim/slim": "1.*",
+	        "hashchange/slim-legacy-mustache": "*",
+	        "mustache/mustache": "2.*"
+	    }
+	}
+
 ## Version
 
 The current version is based on [Mustache.php @ b12fdd0](https://github.com/codeguy/Slim-Extras/blob/b12fdd069062a0d30d1584aad3aa5bd76c275c5e/Views/Mustache.php) in Slim-Extras 2.0.3-develop, last updated on [19 Jan 2013](https://github.com/codeguy/Slim-Extras/commits/develop/Views/Mustache.php). It was tested with [Slim 1.6.7](http://github.com/codeguy/Slim/tree/1.6.7).
