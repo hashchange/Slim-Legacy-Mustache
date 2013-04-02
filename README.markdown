@@ -1,61 +1,45 @@
-# Slim Framework for PHP 5 - Extras
+# Mustache support for Slim, backward compatible with PHP 5.2
 
-Slim is a micro PHP 5 framework that helps you quickly write simple yet powerful RESTful web applications.
+[Slim](http://www.github.com/codeguy/Slim) is a micro PHP 5 framework that helps you quickly write simple yet powerful RESTful web applications. Its [1.x branch](http://github.com/codeguy/Slim/tree/1.6.7) is backward compatible with PHP 5.2.
 
-This repository contains supplemental files for the Slim Framework, such as custom views and plugins. I created this repository to keep the primary Slim Framework repository as light-weight as possible.
+This repository contains a custom Mustache view for Slim 1.x, offering full support for [Mustache.php](http://github.com/bobthecow/mustache.php).
 
-[Visit the primary repository](http://www.github.com/codeguy/Slim)<br/>
-[Follow Slim on Twitter](http://www.twitter.com/slimphp)<br/>
-[Visit the official website](http://www.slimframework.com/)
+## Where it differs from the "official" repo
 
-## Custom Views
+Mustache support for Slim is provided by a single class. It is based on the [Mustache view](https://github.com/codeguy/Slim-Extras/blob/develop/Views/Mustache.php) contained in [Slim-Extras](http://github.com/codeguy/Slim-Extras), but is customized in a number of ways.
 
-This repository contains custom View classes for the template frameworks listed below. To use any of these custom View classes, `require` the appropriate class in your Slim Framework bootstrap file and initialize your Slim application using an instance of the selected View class (see example below).
+Functional differences:
 
-* Smarty
-* Twig
-* Mustache
-* Haml
-* Haanga
-* Blitz
-* Dwoo
-* Sugar
-* Savant
-* Rain
-* H2o
+- This version of the class is compatible with PHP 5.2 and does not use namespaces.
+- The class allows an object to be used as view data, thus enabling the use of [Mustache lambdas](http://mustache.github.com/mustache.5.html) in PHP 5.2. The version in the official repo only supports arrays.
 
-To learn how to write your own custom View class, visit the [Slim Framework documentation](https://github.com/codeguy/Slim/wiki/Slim-Framework-Documentation#custom-views).
+Implementation details:
 
-### How to use a custom View
+- The class requires Slim 1.x and won't work with Slim 2.x (use Slim-Extras for that). It extends `Slim_View`, not `\Slim\View`.
+- The class is called `View_Mustache`, not `Mustache`. It has been renamed to avoid conflicts in the absence of namespaces.
 
-    <?php
-    //Require the Slim Framework
-    require_once 'Slim/Slim.php';
+Otherwise, it is used in the exact same way as the class provided with [Slim-Extras](http://github.com/codeguy/Slim-Extras). See there for usage notes.
 
-    //Require the custom View
-    require_once 'SmartyView.php';
+## Version
 
-    //Init Slim app with the custom View
-    $app = new Slim(array(
-        'view' => new SmartyView()
-    ));
+The current version is based on [Mustache.php @ b12fdd0](https://github.com/codeguy/Slim-Extras/blob/b12fdd069062a0d30d1584aad3aa5bd76c275c5e/Views/Mustache.php) in Slim-Extras 2.0.3-develop, last updated on [19 Jan 2013](https://github.com/codeguy/Slim-Extras/commits/develop/Views/Mustache.php). It was tested with [Slim 1.6.7](http://github.com/codeguy/Slim/tree/1.6.7).
 
-    //Implement the rest of your application
-    //...
-    ?>
+## Related
 
-## Plugins
+**Slim**
 
-Coming soon...
+[Primary Slim repo](http://www.github.com/codeguy/Slim)  
+[Primary Slim-Extras repo](http://github.com/codeguy/Slim-Extras)  
+[Slim website](http://www.slimframework.com/)
 
-## About the Author
+**Mustache**
 
-The Slim Framework for PHP 5 is created and maintained by Josh Lockhart, a web developer by day at [New Media Campaigns](http://www.newmediacampaigns.com/), and a [hacker by night](http://github.com/codeguy).
-
-Slim is in active development, and test coverage is continually improving.
+[Primary Mustache.php repo](http://github.com/bobthecow/mustache.php)  
+[Mustache.php wiki](http://github.com/bobthecow/mustache.php/wiki)  
+[Mustache website](http://mustache.github.com/)
 
 ## Open Source License
 
-The Slim Framework for PHP 5 and the additional resources in this repository are released under the MIT public license.
+The resources in this repository are released under the MIT public license.
 
 <http://www.slimframework.com/license>

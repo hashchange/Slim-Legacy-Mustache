@@ -54,10 +54,10 @@
  * - The class allows an object to be used as view data, thus enabling the use of
  *   Mustache lambdas in PHP 5.2. The version in the official repo only supports
  *   arrays. This functionality is fully encapsulated in the appendData() method.
- * - Some explanatory comments are fixed.
  *
  * @package Slim
  * @author  Johnson Page <http://johnsonpage.org>
+ * @author  Justin Hileman <http://justinhileman.info>
  * @author  Michael Heim <http://www.zeilenwechsel.de>
  */
 class View_Mustache extends Slim_View

@@ -1,31 +1,32 @@
 {
-    "name": "slim/extras",
+    "name": "hashchange/slim-legacy-mustache",
     "type": "library",
-    "description": "Extras package for Slim Framework. Authentication Middlewares, Log Writers, Template Parser Views, etc...",
-    "keywords": ["templating","extensions","middleware","loggers"],
-    "homepage": "http://github.com/codeguy/Slim-Extras",
+    "description": "Mustache support for Slim 1.x, backward compatible with PHP 5.2",
+    "keywords": ["templating","extensions","mustache","slim","legacy"],
+    "homepage": "http://github.com/hashchange/Slim-Legacy-Mustache",
     "license": "MIT",
     "authors": [
         {
-            "name": "Josh Lockhart",
-            "email": "info@joshlockhart.com",
-            "homepage": "http://www.joshlockhart.com/"
+            "name": "Johnson Page",
+            "homepage": "http://johnsonpage.org/"
         },
         {
-            "name": "Andrew Smith",
-            "email": "a.smith@silentworks.co.uk",
-            "homepage": "http://silentworks.co.uk/"
+            "name": "Justin Hileman",
+            "homepage": "http://justinhileman.info/"
+        },
+        {
+            "name": "Michael Heim",
+            "homepage": "http://www.zeilenwechsel.de/"
         }
     ],
     "require": {
-        "php": ">=5.2.0"
+        "php": ">=5.2.0",
+        "slim/slim": "1.*",
+        "mustache/mustache": "2.*"
     },
     "autoload": {
         "psr-0": {
-            "Twig_Extensions_": "View/Extension/",
-            "Middleware_": "",
-            "View_": "",
-            "Log_": ""
+            "": ""
         }
     }
 }
